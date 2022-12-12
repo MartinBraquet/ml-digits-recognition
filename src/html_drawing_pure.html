@@ -50,7 +50,7 @@
     }
 
     function save() {
-        hideResult();
+        loadResult();
         var dataURL = canvas.toDataURL();
         $.ajax({
             type: "get",
@@ -75,6 +75,7 @@
 
     function findxy(res, e) {
         if (res == 'down') {
+            hideResult();
             prevX = currX;
             prevY = currY;
             currX = e.offsetX - y / 2;
@@ -110,6 +111,11 @@
     }
 
     function hideResult() {
+        document.getElementById("digit_result").style.display = "none";
+    }
+
+    function loadResult() {
+        document.getElementById("digit_result").style.display = "block";
         document.getElementById("digit_result").innerHTML = '...';
     }
 
