@@ -1,0 +1,124 @@
+<head>
+    <script type="module"
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+    <script type="module"
+            src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css?version=1"
+          rel="stylesheet" type="text/css"/>
+</head>
+<script type="text/javascript">
+    var canvas, ctx, flag = false,
+        prevX = 0,
+        currX = 0,
+        prevY = 0,
+        currY = 0,
+        dot_flag = false;
+
+    var x = "black",
+        y = 12;
+
+    function init() {
+        canvas = document.getElementById('can');
+        ctx = canvas.getContext("2d");
+        w = canvas.width;
+        h = canvas.height;
+
+        canvas.addEventListener("mousemove", function (e) {
+            findxy('move', e)
+        }, false);
+        canvas.addEventListener("mousedown", function (e) {
+            findxy('down', e)
+        }, false);
+        canvas.addEventListener("mouseup", function (e) {
+            findxy('up', e)
+        }, false);
+        canvas.addEventListener("mouseout", function (e) {
+            findxy('out', e)
+        }, false);
+    }
+
+    function draw() {
+        ctx.beginPath();
+        ctx.fillStyle = x;
+        ctx.fillRect((prevX + currX) / 2, (prevY + currY) / 2, y, y);
+        ctx.closePath();
+        console.log((prevX + currX) / 2, (prevY + currY) / 2);
+    }
+
+    function erase() {
+        ctx.clearRect(0, 0, w, h);
+    }
+
+    function save() {
+        hideResult();
+        var dataURL = canvas.toDataURL();
+        $.ajax({
+            type: "get",
+            crossDomain: true,
+            //url: 'http://127.0.0.1:5000/ml_digits_recognition',
+            url: '/ml_digits_recognition',
+            data: {"img": dataURL},
+            dataType: "text",
+            success: function (response) {
+                var resp = JSON.parse(response)
+                console.log(resp);
+                renderResult(resp['digit']);
+            },
+            error: function (xhr, status) {
+                console.log(xhr);
+                console.log(status);
+                renderResult(status);
+
+            }
+        });
+    }
+
+    function findxy(res, e) {
+        if (res == 'down') {
+            prevX = currX;
+            prevY = currY;
+            currX = e.offsetX - y / 2;
+            currY = e.offsetY - y / 2;
+
+            flag = true;
+            dot_flag = true;
+            if (dot_flag) {
+                ctx.beginPath();
+                ctx.fillStyle = x;
+                ctx.fillRect(currX, currY, y, y);
+                ctx.closePath();
+                dot_flag = false;
+            }
+        }
+        if (res == 'up') {
+            flag = false;
+            save();
+            erase();
+        }
+        if (res == 'out') {
+            flag = false;
+        }
+        if (res == 'move') {
+            if (flag) {
+                prevX = currX;
+                prevY = currY;
+                currX = e.offsetX - y / 2;
+                currY = e.offsetY - y / 2;
+                draw();
+            }
+        }
+    }
+
+    function hideResult() {
+        document.getElementById("digit_result").innerHTML = '...';
+    }
+
+    function renderResult(digit) {
+        document.getElementById("digit_result").innerHTML = 'Digit: ' + digit;
+    }
+</script>
+<body onload="init()" style="height:450px">
+<canvas id="can" width="200" height="200"
+        style="position:relative;top:35px;left:0px;border:2px solid;"></canvas>
+<p id="digit_result" style="position:absolute;top:0px;left:0px;"></p>
+</body>
