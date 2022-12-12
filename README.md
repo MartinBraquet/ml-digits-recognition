@@ -4,7 +4,7 @@ Official repository: https://github.com/MartinBraquet/ml-digits-recognition.
 
 Test online: https://martinbraquet.com/index.php/solo_page_digits_recognition.
 
-![Alt Text](https://github.com/MartinBraquet/ml-digits-recognition/blob/main/demo.gif)
+![Alt Text](https://github.com/MartinBraquet/ml-digits-recognition/blob/main/src/demo.gif)
 
 ## Installation
 
@@ -20,9 +20,9 @@ Convolutional neural network visualization.
 nn_visualization.ipynb
 ```
 
-![Alt Text](https://github.com/MartinBraquet/ml-digits-recognition/blob/main/nn1.png)
+![Alt Text](https://github.com/MartinBraquet/ml-digits-recognition/blob/main/src/nn1.png)
 
-![Alt Text](https://github.com/MartinBraquet/ml-digits-recognition/blob/main/nn2.png)
+![Alt Text](https://github.com/MartinBraquet/ml-digits-recognition/blob/main/src/nn2.png)
 
 ## Training
 
@@ -34,11 +34,11 @@ ml_digits_recognition_training.ipynb
 
 Accuracy vs epochs.
 
-![Alt Text](https://github.com/MartinBraquet/ml-digits-recognition/blob/main/accuracy.png)
+![Alt Text](https://github.com/MartinBraquet/ml-digits-recognition/blob/main/src/accuracy.png)
 
 Loss vs epochs.
 
-![Alt Text](https://github.com/MartinBraquet/ml-digits-recognition/blob/main/loss.png)
+![Alt Text](https://github.com/MartinBraquet/ml-digits-recognition/blob/main/src/loss.png)
 
 ## Test
 
