@@ -2,6 +2,8 @@
 
 Official repository: https://github.com/MartinBraquet/ml-digits-recognition.
 
+Test online: https://martinbraquet.com/index.php/solo_page_digits_recognition.
+
 ![Alt Text](https://github.com/MartinBraquet/ml-digits-recognition/blob/main/demo.gif)
 
 ## Installation
