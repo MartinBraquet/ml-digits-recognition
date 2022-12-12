@@ -30,7 +30,11 @@ Train the model and save it as `model.pt`.
 ml_digits_recognition_training.ipynb
 ```
 
+Accuracy vs epochs
+
 ![Alt Text](https://github.com/MartinBraquet/ml-digits-recognition/blob/main/accuracy.png)
+
+Loss vs epochs
 
 ![Alt Text](https://github.com/MartinBraquet/ml-digits-recognition/blob/main/loss.png)
 
