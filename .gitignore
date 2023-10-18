@@ -6,7 +6,7 @@ src/ml_digits_recognition/.ipynb_checkpoints/
 /src/ml_digits_recognition/Custom test inputs/
 .idea/
 /src/ml_digits_recognition/MNIST/
-*/torchlogs/*
 */.ipynb_checkpoints/*
 */.idea/*
 */.pytest_cache/*
+/src/ml_digits_recognition/torchlogs/*
