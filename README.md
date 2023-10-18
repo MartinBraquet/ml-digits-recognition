@@ -29,7 +29,9 @@ pip install -r requirements.txt
 
 ## Documentation
 
-Convolutional neural network visualization.
+Description: https://martinbraquet.com/index.php/research/#Convolutional_Neural_Network_using_MNIST_Dataset_for_Digit_Recognition.
+
+Visualization of the convolutional neural network:
 
 ```
 nn_visualization.ipynb
