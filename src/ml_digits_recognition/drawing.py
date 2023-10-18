@@ -1,9 +1,15 @@
 import os.path
+import sys
 from tkinter import BOTH, Button, Canvas, Tk, YES
 
 import PIL
 import torch
 from PIL import Image, ImageDraw
+
+parent_dir_path = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+if parent_dir_path not in sys.path:
+    sys.path.insert(0, parent_dir_path)
+
 from ml_digits_recognition.neural_network import NNTest, NeuralNetwork, get_test_input_from_pil
 
 dir_path = os.path.dirname(os.path.realpath(__file__))

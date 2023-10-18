@@ -69,7 +69,7 @@ ml_digits_recognition_test.ipynb
 Test in Python.
 
 ```
-python drawing.py
+python src/ml_digits_recognition/drawing.py
 ```
 
 ## Tools
