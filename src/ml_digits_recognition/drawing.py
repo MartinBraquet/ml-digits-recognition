@@ -8,6 +8,7 @@ from ml_digits_recognition.neural_network import NNTest, NeuralNetwork, get_test
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
+
 def run():
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     model = NeuralNetwork().to(device)
@@ -25,18 +26,15 @@ def run():
     img = PIL.Image.new("1", (width, height))
     draw = ImageDraw.Draw(img)
 
-
     def paint(event):
         x1, y1 = (event.x - 1), (event.y - 1)
         x2, y2 = (event.x + 1), (event.y + 1)
         canvas.create_oval(x1, y1, x2, y2, fill='white', width=10)
         draw.line([x1, y1, x2, y2], fill='white', width=10)
 
-
     def clear():
         draw.rectangle((0, 0, width, height), width=0, fill='black')
         canvas.delete('all')
-
 
     def save():
         save_dir = 'Custom test inputs'
@@ -47,7 +45,6 @@ def run():
         print(f"Neural network classification for drawing: {nn_test.classify(test_input_nn)}")
         clear()
 
-
     canvas.pack(expand=YES, fill=BOTH)
     canvas.bind("<B1-Motion>", paint)
 
@@ -56,6 +53,7 @@ def run():
     button.pack()
 
     master.mainloop()
+
 
 if __name__ == '__main__':
     run()
