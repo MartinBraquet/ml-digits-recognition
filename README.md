@@ -6,7 +6,22 @@ Test online: https://martinbraquet.com/index.php/solo_page_digits_recognition.
 
 ![Alt Text](https://github.com/MartinBraquet/ml-digits-recognition/blob/main/src/demo.gif)
 
-## Installation
+## Installation from PyPI
+
+```
+pip install ml-digits-recognition
+```
+
+### Usage
+
+```
+from ml_digits_recognition import drawing
+drawing.run()
+```
+
+
+
+## Installation from Source
 
 ```
 pip install -r requirements.txt
@@ -52,7 +67,7 @@ ml_digits_recognition_test.ipynb
 Test in Python.
 
 ```
-python user_input_drawing.py
+python drawing.py
 ```
 
 ## Tools

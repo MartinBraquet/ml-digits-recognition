@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ml_digits_recognition"
+version = "0.0.3"
+dependencies = [
+    'torch',
+    'torchvision',
+    'Pillow',
+]
+authors = [
+  { name="Martin" },
+]
+description = "A simple digits recognition neural network"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[tool.setuptools.package-data]
+myModule = ["*.pt"]
+
+[project.urls]
+"Homepage" = "https://github.com/MartinBraquet/ml-digits-recognition"
+"Bug Tracker" = "https://github.com/MartinBraquet/ml-digits-recognition/issues"
