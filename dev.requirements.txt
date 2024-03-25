@@ -2,3 +2,4 @@ pytest
 pytest-cov
 pytest-env
 pip-tools
+build
