@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt -r dev.requirements.txt
       - name: Run tests
-        run: pytest tests --cov=ml_digits_recognition --cov-report=xml
+        run: pytest src/ml_digits_recognition --cov=ml_digits_recognition --cov-report=xml
       - name: Upload coverage reports to Codecov
         if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.11'
         uses: codecov/codecov-action@v4.0.1
