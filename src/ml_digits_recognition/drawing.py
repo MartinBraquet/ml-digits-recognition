@@ -3,25 +3,19 @@ import sys
 from tkinter import BOTH, Button, Canvas, Tk, YES
 
 import PIL
-import torch
 from PIL import Image, ImageDraw
 
 parent_dir_path = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 if parent_dir_path not in sys.path:
     sys.path.insert(0, parent_dir_path)
 
-from ml_digits_recognition.neural_network import NNTest, NeuralNetwork, get_test_input_from_pil
+from ml_digits_recognition.neural_network import get_test_input_from_pil, load_nn_test
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
 
 def run():
-    device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    model = NeuralNetwork().to(device)
-    path = os.path.join(dir_path, 'model_precise.pt')
-    model.load_state_dict(torch.load(path))
-    model.eval()
-    nn_test = NNTest(model)
+    nn_test = load_nn_test()
 
     width = 200
     height = 200

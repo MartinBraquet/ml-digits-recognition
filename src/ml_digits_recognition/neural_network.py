@@ -1,3 +1,5 @@
+import os
+
 import torch
 import torchvision.transforms.functional as fn
 from torch import nn
@@ -56,3 +58,12 @@ def get_test_input_from_pil(img):
     test_input_nn = fn.resize(test_input_nn, size=[20, 20])
     test_input_nn = fn.pad(test_input_nn, padding=[4, 4])
     return test_input_nn
+
+
+def load_nn_test():
+    device = 'cuda' if torch.cuda.is_available() else 'cpu'
+    model = NeuralNetwork().to(device)
+    path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'model_precise.pt')
+    model.load_state_dict(torch.load(path))
+    model.eval()
+    return NNTest(model)
