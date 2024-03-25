@@ -1,0 +1,29 @@
+site_name: ml-digits-recognition
+site_url: https://ml-digits-recognition.readthedocs.io/en/latest/
+repo_url: https://github.com/MartinBraquet/ml-digits-recognition
+edit_uri: https://github.com/MartinBraquet/ml-digits-recognition/blob/main/docs/
+site_description: Convolutional Neural Network using MNIST dataset for Digit Recognition
+site_author: Martin Braquet
+
+theme:
+  name: readthedocs
+  highlightjs: true
+
+nav:
+  - Introduction: ../README.md
+  - Details:
+      - details.md
+extra:
+  version: "2.0.21"
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        # See: https://mkdocstrings.github.io/python/usage/
+        python:
+          options:
+            docstring_style: google
+markdown_extensions:
+  - markdown_include.include:
+      base_path: .
+  - admonition
