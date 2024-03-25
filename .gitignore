@@ -10,3 +10,6 @@ src/ml_digits_recognition/.ipynb_checkpoints/
 */.idea/*
 */.pytest_cache/*
 /src/ml_digits_recognition/torchlogs/*
+*.coverage
+*coverage.xml
+
