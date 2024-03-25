@@ -1,5 +1,13 @@
 # Convolutional Neural Network using MNIST dataset for Digit Recognition
 
+
+[![Release](https://img.shields.io/pypi/v/ml-digits-recognition?label=Release&style=flat-square)](https://pypi.org/project/ml-digits-recognition/)
+[![CI](https://github.com/MartinBraquet/ml-digits-recognition/actions/workflows/ci.yml/badge.svg)](https://github.com/MartinBraquet/ml-digits-recognition/actions/workflows/ci.yml/badge.svg)
+[![CD](https://github.com/MartinBraquet/ml-digits-recognition/actions/workflows/cd.yml/badge.svg)](https://github.com/MartinBraquet/ml-digits-recognition/actions/workflows/cd.yml/badge.svg)
+[![Coverage](https://codecov.io/gh/MartinBraquet/ml-digits-recognition/branch/main/graph/badge.svg)](https://codecov.io/gh/MartinBraquet/ml-digits-recognition)
+[![Documentation Status](https://readthedocs.org/projects/ml-digits-recognition/badge/?version=latest)](https://ml-digits-recognition.readthedocs.io/en/latest/?badge=latest)
+[![Downloads](https://static.pepy.tech/badge/ml-digits-recognition)](https://pepy.tech/project/ml-digits-recognition) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Official repository: https://github.com/MartinBraquet/ml-digits-recognition.
 
 Test online: https://martinbraquet.com/index.php/solo_page_digits_recognition.
@@ -79,3 +87,15 @@ Draw a digit and save it as a PNG file.
 ```
 user_input_drawing.ipynb
 ```
+
+## Issues / Bug reports / Feature requests
+
+Please open an issue.
+
+## Contributions
+
+Contributions are welcome. Please check the outstanding issues and feel free to open a pull request.
+
+### Contributors
+
+[![Contributors](https://contrib.rocks/image?repo=MartinBraquet/ml-digits-recognition)](https://github.com/MartinBraquet/ml-digits-recognition/graphs/contributors)
