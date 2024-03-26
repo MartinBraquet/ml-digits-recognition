@@ -31,9 +31,16 @@ drawing.run()
 
 ## Installation from Source
 
+For basic usage:
 ```
-pip install -r requirements.txt
+pip install -e "."
 ```
+
+For development:
+```
+pip install -e ".[dev]"
+```
+
 
 ## Documentation
 
