@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ml_digits_recognition"
-version = "{{VERSION}}"
+dynamic = ["version"]
 dependencies = [
     'torch',
     'torchvision',
