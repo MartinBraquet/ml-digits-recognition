@@ -28,7 +28,6 @@ drawing.run()
 ```
 
 
-
 ## Installation from Source
 
 For basic usage:
@@ -93,6 +92,17 @@ Draw a digit and save it as a PNG file.
 
 ```
 user_input_drawing.ipynb
+```
+
+## CI / CD
+
+Each commit on the `main` branch is subject to a CI test.
+
+A new version is released to PyPI when a tag is created. TODO: Set version in `pyproject.toml` only, then trigger a new PyPI release (and git tag) by updating the version and pushing into `main`. The CD should thus check on each push on main, if the package is more recent than the last tag, then build and deploy new release. This is faster as one only needs to update locally the version in `pyproject.toml` in the same commit as the fixes for the new release. The rest is automated, so it can all be done from a local IDE.
+The version can be accessible at other places if desired. For example in `__init__.py`:
+```python
+import importlib.metadata
+__version__ = importlib.metadata.version(__package__)
 ```
 
 ## Issues / Bug reports / Feature requests
