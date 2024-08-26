@@ -47,7 +47,7 @@ mkdocs-autorefs==1.0.1
     # via mkdocstrings
 mkdocs-get-deps==0.2.0
     # via mkdocs
-mkdocstrings[python]==0.25.1
+mkdocstrings[python]==0.25.2
     # via
     #   -r docs/requirements.in
     #   mkdocstrings-python
