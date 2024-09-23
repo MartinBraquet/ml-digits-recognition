@@ -43,7 +43,7 @@ pip install -e ".[dev]"
 
 ## Documentation
 
-Click [here](https://martinbraquet.com/index.php/research/#Convolutional_Neural_Network_using_MNIST_Dataset_for_Digit_Recognition) for a full description.
+Click [here](https://martinbraquet.com/research/#Convolutional_Neural_Network_for_Digit_Recognition) for a full description.
 
 Visualization of the convolutional neural network:
 
