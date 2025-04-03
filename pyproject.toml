@@ -22,6 +22,9 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 
+[tool.setuptools.dynamic]
+version = {attr = "ml_digits_recognition.__version__"}
+
 
 [project.optional-dependencies]
 dev = [
