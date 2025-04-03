@@ -10,6 +10,8 @@ then
     exit 1
 fi
 
+conda activate ml_digits_recognition
+
 RELEASE=$2
 if [ -z "$RELEASE" ]
 then
