@@ -14,8 +14,6 @@ Image recognition is performed through a convolutional neural network (shown bel
 
 It was trained using the MNIST dataset (60k images) across 50 epochs with a batch size of 256, achieving 95% of accuracy on the test dataset.
 
-Official repository: https://github.com/MartinBraquet/ml-digits-recognition.
-
 ![Alt Text](https://raw.githubusercontent.com/MartinBraquet/ml-digits-recognition/main/src/ml_digits_recognition/demo.gif)
 
 ## Installation from PyPI
