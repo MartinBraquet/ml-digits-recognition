@@ -8,9 +8,11 @@
 [![Documentation Status](https://readthedocs.org/projects/ml-digits-recognition/badge/?version=latest)](https://ml-digits-recognition.readthedocs.io/en/latest/?badge=latest)
 [![Downloads](https://static.pepy.tech/badge/ml-digits-recognition)](https://pepy.tech/project/ml-digits-recognition) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Official repository: https://github.com/MartinBraquet/ml-digits-recognition.
+This work proposes an algorithm which detects a digit (from 0 to 9) from an image. Click on the video to test the algorithm in real time.
 
-Test online: https://martinbraquet.com/index.php/solo_page_digits_recognition.
+Image recognition is performed through a convolutional neural network (shown below). The first round reduces the dimension of the input image while keeping its meaningful information (Conv / ReLu / MaxPool / Conv / MaxPool). The second round flattens the 2D tensor and passes it through a classical neural network (multilayer perceptron) to produce 10 values (one associated to each digit). The third round performs a logarithmic softmax on the 10 values to reflect the probability that each digit is rendered on the input image. The last round outputs the digit with the highest of the 10 computed probabilities (maximum likelihood estimator).
+
+It was trained using the MNIST dataset (60k images) across 50 epochs with a batch size of 256, achieving 95% of accuracy on the test dataset.
 
 ![Alt Text](https://raw.githubusercontent.com/MartinBraquet/ml-digits-recognition/main/src/ml_digits_recognition/demo.gif)
 
@@ -28,16 +30,20 @@ drawing.run()
 ```
 
 
-
 ## Installation from Source
 
+For basic usage:
 ```
-pip install -r requirements.txt
+pip install -e "."
 ```
+
+For development:
+```
+pip install -e ".[dev]"
+```
+
 
 ## Documentation
-
-Click [here](https://martinbraquet.com/index.php/research/#Convolutional_Neural_Network_using_MNIST_Dataset_for_Digit_Recognition) for a full description.
 
 Visualization of the convolutional neural network:
 
@@ -86,6 +92,17 @@ Draw a digit and save it as a PNG file.
 
 ```
 user_input_drawing.ipynb
+```
+
+## CI / CD
+
+Each commit on the `main` branch is subject to a CI test.
+
+A new version is released to PyPI when a tag is created. TODO: Set version in `pyproject.toml` only, then trigger a new PyPI release (and git tag) by updating the version and pushing into `main`. The CD should thus check on each push on main, if the package is more recent than the last tag, then build and deploy new release. This is faster as one only needs to update locally the version in `pyproject.toml` in the same commit as the fixes for the new release. The rest is automated, so it can all be done from a local IDE.
+The version can be accessible at other places if desired. For example in `__init__.py`:
+```python
+import importlib.metadata
+__version__ = importlib.metadata.version(__package__)
 ```
 
 ## Issues / Bug reports / Feature requests
