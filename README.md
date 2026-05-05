@@ -45,8 +45,6 @@ pip install -e ".[dev]"
 
 ## Documentation
 
-Click [here](https://martinbraquet.com/research/#Convolutional_Neural_Network_for_Digit_Recognition) for a full description.
-
 Visualization of the convolutional neural network:
 
 ```
