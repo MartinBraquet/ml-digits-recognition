@@ -8,9 +8,13 @@
 [![Documentation Status](https://readthedocs.org/projects/ml-digits-recognition/badge/?version=latest)](https://ml-digits-recognition.readthedocs.io/en/latest/?badge=latest)
 [![Downloads](https://static.pepy.tech/badge/ml-digits-recognition)](https://pepy.tech/project/ml-digits-recognition) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Official repository: https://github.com/MartinBraquet/ml-digits-recognition.
+This work proposes an algorithm which detects a digit (from 0 to 9) from an image. Click on the video to test the algorithm in real time.
 
-Test online: https://martinbraquet.com/index.php/solo_page_digits_recognition.
+Image recognition is performed through a convolutional neural network (shown below). The first round reduces the dimension of the input image while keeping its meaningful information (Conv / ReLu / MaxPool / Conv / MaxPool). The second round flattens the 2D tensor and passes it through a classical neural network (multilayer perceptron) to produce 10 values (one associated to each digit). The third round performs a logarithmic softmax on the 10 values to reflect the probability that each digit is rendered on the input image. The last round outputs the digit with the highest of the 10 computed probabilities (maximum likelihood estimator).
+
+It was trained using the MNIST dataset (60k images) across 50 epochs with a batch size of 256, achieving 95% of accuracy on the test dataset.
+
+Official repository: https://github.com/MartinBraquet/ml-digits-recognition.
 
 ![Alt Text](https://raw.githubusercontent.com/MartinBraquet/ml-digits-recognition/main/src/ml_digits_recognition/demo.gif)
 
