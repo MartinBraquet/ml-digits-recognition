@@ -58,7 +58,7 @@ pathspec==0.12.1
     # via mkdocs
 platformdirs==4.2.0
     # via mkdocs-get-deps
-pymdown-extensions==10.16.1
+pymdown-extensions==10.21.3
     # via mkdocstrings
 python-dateutil==2.9.0.post0
     # via ghp-import
